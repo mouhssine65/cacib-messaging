@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-button [matMenuTriggerFor]="messageMenu">Message</button>
+  <mat-menu #messageMenu="matMenu">
+    <button mat-menu-item [routerLink]="['/messages']">View Messages</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="partenaireMenu">Partenaire</button>
+  <mat-menu #partenaireMenu="matMenu">
+    <button mat-menu-item [routerLink]="['/partenaires']">View Partenaires</button>
+    <button mat-menu-item [routerLink]="['/ajout-partenaire']">Add Partenaire</button>
+  </mat-menu>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

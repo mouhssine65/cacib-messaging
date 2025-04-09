@@ -1,0 +1,48 @@
+<br />
+<h1>Partner List</h1>
+<p>Here are the partners:</p>
+<br />
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="alias">
+        <th mat-header-cell *matHeaderCellDef> Alias </th>
+        <td mat-cell *matCellDef="let partner"> {{partner.alias}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let partner"> {{partner.type}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="direction">
+        <th mat-header-cell *matHeaderCellDef> Direction </th>
+        <td mat-cell *matCellDef="let partner"> {{partner.direction}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="application">
+        <th mat-header-cell *matHeaderCellDef> Application </th>
+        <td mat-cell *matCellDef="let partner"> {{partner.application}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="processedFlowType">
+        <th mat-header-cell *matHeaderCellDef> Processed Flow Type </th>
+        <td mat-cell *matCellDef="let partner"> {{partner.processedFlowType}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let partner"> {{partner.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let partner">
+            <button mat-button (click)="confirmDelete(partner.id)">Delete</button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br />
+
+<button mat-raised-button color="primary" (click)="openAddPartner()">Add Partner</button>

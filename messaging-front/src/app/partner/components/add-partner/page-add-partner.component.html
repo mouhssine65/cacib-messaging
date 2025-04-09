@@ -1,0 +1,44 @@
+<div class="container">
+    <h2>Add Partner</h2>
+    <form (ngSubmit)="addPartner()">
+        <mat-form-field class="full-width">
+            <mat-label>Alias</mat-label>
+            <input matInput [(ngModel)]="partner.alias" name="alias" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Type</mat-label>
+            <input matInput [(ngModel)]="partner.type" name="type" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Direction</mat-label>
+            <mat-select [(ngModel)]="partner.direction" name="direction" required>
+                <mat-option value="INBOUND">INBOUND</mat-option>
+                <mat-option value="OUTBOUND">OUTBOUND</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Application</mat-label>
+            <input matInput [(ngModel)]="partner.application" name="application">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Processed Flow Type</mat-label>
+            <mat-select [(ngModel)]="partner.processedFlowType" name="processedFlowType" required>
+                <mat-option value="MESSAGE">MESSAGE</mat-option>
+                <mat-option value="ALERTING">ALERTING</mat-option>
+                <mat-option value="NOTIFICATION">NOTIFICATION</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="partner.description" name="description" required></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Add</button>
+        <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+    </form>
+</div>
